@@ -1,0 +1,53 @@
+/* Perusasetukset */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; }
+.container { max-width: 960px; margin: 0 auto; padding: 16px; }
+
+/* Saavutettavuus: skip-link */
+.skip-link {
+  position: absolute; left: -999px; top: 8px;
+  background: #fff; padding: 8px; border: 2px solid #000;
+}
+.skip-link:focus { left: 8px; }
+
+/* Ylätunniste + nav (mobile first: pystysuuntainen) */
+.site-header { border-bottom: 1px solid #ddd; }
+.logo { font-weight: 700; margin: 0 0 8px; }
+.nav {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.nav a { text-decoration: none; padding: 8px; border-radius: 8px; }
+.nav a[aria-current="page"] { outline: 2px solid currentColor; }
+
+/* Sisältö */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+}
+.button {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 14px;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+/* Desktop/tablet */
+@media (min-width: 700px) {
+  .site-header .container {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px;
+  }
+  .logo { margin: 0; }
+  .nav { flex-direction: row; }
+}
